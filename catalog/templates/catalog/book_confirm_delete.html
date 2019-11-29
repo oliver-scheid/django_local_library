@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1 style="padding-top: 20px;">Delete Book</h1>
+<p style="margin-bottom: 0;">Book by: <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a></p>
+<p>Title: {{ book.title }}</p>
+<p>Are you sure you want to delete the author: {{ author }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete.">
+</form>
+
+{% endblock %}
